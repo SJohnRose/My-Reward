@@ -13,6 +13,11 @@ const typeDefs = gql`
     # Query to return a sinle teacher using ID parameter
     teacher(id: ID!): Teacher
   }
+
+  type Mutation {
+    # Set the required fields for new Teacher
+    addTeacher(name: String!, password: String!): Teacher
+  }
 `;
 
 module.exports = typeDefs;
