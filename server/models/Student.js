@@ -11,7 +11,10 @@ const studentSchema = new Schema(
       type: String,
       required: true
     },
-    
+    reward: {
+      type: [Reward],
+      required: true
+    },
   }
 );
 

@@ -5,13 +5,29 @@ const typeDefs = gql`
     _id: ID
     name: String
     password: String
-    
+    students: [Student]
   }
+
+  type Student {
+    _id: ID
+    studentCode: String
+    password: String
+    rewards: [Reward]
+  }
+
+  type Reward {
+    _id: ID
+    category: String
+    points: Int
+  }
+
 
   type Query {
     teachers: [Teacher]
-    # Query to return a sinle teacher using ID parameter
+    students: [Student]
+    # Query to return a single teacher and student using ID parameter
     teacher(id: ID!): Teacher
+    student(id: ID!): Student
   }
 
   type Mutation {

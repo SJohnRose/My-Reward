@@ -1,4 +1,4 @@
-const { Teacher } = require('../models');
+const { Teacher, Student } = require('../models');
 
 const resolvers = {
   Query: {
@@ -7,7 +7,13 @@ const resolvers = {
     },
     teacher: async (parent,args) => {
       return await Teacher.findById(args.id);
-    }
+    },
+    students: async () => {
+      return await Student.find({});
+    },
+    student: async (parent,args) => {
+      return await Student.findById(args.id);
+    },
   },
   Mutation: {
     addTeacher: async (parent, { name, password }) => {
