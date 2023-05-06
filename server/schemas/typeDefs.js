@@ -10,6 +10,8 @@ const typeDefs = gql`
 
   type Query {
     teachers: [Teacher]
+    # Query to return a sinle teacher using ID parameter
+    teacher(id: ID!): Teacher
   }
 `;
 
