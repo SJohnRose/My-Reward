@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
-header {
+.header {
   background-color: rgb(46, 161, 227);
+}
+
+.container {
+  height: 800px;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
 }

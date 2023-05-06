@@ -3,6 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Home from './pages/Home';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import './App.css';
 import './index.css';
@@ -20,6 +21,7 @@ function App() {
         <div className="container">
           <Home />
         </div>
+        <Footer />
       </div>
     </ApolloProvider>
   );
