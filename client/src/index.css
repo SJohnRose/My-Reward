@@ -18,7 +18,19 @@ code {
 
 .container {
   height: 800px;
-  text-align: center;
+  padding: 20px;
+}
+
+.homepage-title {
+  color:rgb(46, 161, 227);
+  font-weight:bold;
+}
+
+.teacher-card {
+  height: 100px;
+  width: 50%;
+  background-color:rgb(148, 193, 218);
+  margin-bottom: 20px;
 }
 
 .footer {
