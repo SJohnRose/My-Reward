@@ -14,6 +14,5 @@ const rewardSchema = new Schema(
   }
 );
 
-const Reward = model('Reward', rewardSchema);
 
-module.exports = Reward;
+module.exports = rewardSchema;

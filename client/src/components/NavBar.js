@@ -1,12 +1,33 @@
 import React from 'react';
 
-const NavBar = () => {
+const NavBar = ({currentPage, handlePageChange}) => {
   return (
     <div className="navbar">
       <ul className="navbar-ul">
-        <li className="navbar-li"> Home </li> 
-        <li className="navbar-li"> Teacher </li> 
-        <li className="navbar-li"> Student </li>
+        <li className="navbar-li"> 
+            <a href="#home"
+            onClick={() => handlePageChange('Home')}
+            className={currentPage === 'Home' ? 'nav-link-active' : 'nav-link'}
+             >
+            Home 
+            </a>
+        </li> 
+        <li className="navbar-li"> 
+            <a href="#teacher"
+            onClick={() => handlePageChange('Teacher')}
+            className={currentPage === 'Teacher' ? 'nav-link-active' : 'nav-link'}
+             >
+            Teacher 
+            </a>
+        </li> 
+        <li className="navbar-li"> 
+            <a href="#student"
+            onClick={() => handlePageChange('Student')}
+            className={currentPage === 'Student' ? 'nav-link-active' : 'nav-link'}
+             >
+            Student 
+            </a>
+        </li>
       </ul>  
     </div>
     

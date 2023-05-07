@@ -1,7 +1,9 @@
 const { Schema, model } = require('mongoose');
+const Reward = require('./Reward');
 
 const studentSchema = new Schema(
   {
+    _id: Schema.Types.ObjectId,
     studentCode: {
       type: String,
       required: true,
@@ -11,10 +13,7 @@ const studentSchema = new Schema(
       type: String,
       required: true
     },
-    reward: {
-      type: [Reward],
-      required: true
-    },
+    reward: [Reward]
   }
 );
 

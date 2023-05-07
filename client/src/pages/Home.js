@@ -10,7 +10,7 @@ const Home = () => {
 
     return (
       <main>
-        <div>
+        <div className="home-page">
           {loading ? (
             <div>Loading...</div>
           ) : (

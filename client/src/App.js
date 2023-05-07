@@ -1,10 +1,7 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-import Home from './pages/Home';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
+import MainSection from './components/MainSection';
 
 import './App.css';
 import './index.css';
@@ -17,13 +14,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className = "main">
-        <Header />
-        <NavBar />
-        <div className="container">
-          <Home />
-        </div>
-        <Footer />
+      <div className = "main-section">
+          <MainSection />
       </div>
     </ApolloProvider>
   );
