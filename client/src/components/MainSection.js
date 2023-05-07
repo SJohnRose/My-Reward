@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Home from '../pages/Home';
+import Teacher from '../pages/Teacher';
 import NavBar from './NavBar';
 import Header from './Header';
 import Footer from './Footer';
@@ -12,9 +13,9 @@ export default function MainSection() {
     if (currentPage === 'Home') {
       return <Home />;
     }
-    // if (currentPage === 'Teacher') {
-    //   return <Teacher />;
-    // }
+    if (currentPage === 'Teacher') {
+      return <Teacher />;
+    }
     // if (currentPage === 'Student') {
     //   return <Student />;
     // }
