@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_TEACHERS } from '../utils/queries';
 import TeacherList from '../components/TeacherList';
+import SignUp from './SignUp';
 
 
 const Teacher = () => {
@@ -9,8 +10,11 @@ const Teacher = () => {
     const teachers = data?.teachers || [];
 
     return (
-      <main>
-        <div className="home-page">
+      <main className="teacher-page">
+        <div className="signup-section">
+            <SignUp />
+        </div>
+        <div className="teacher-list">
           {loading ? (
             <div>Loading...</div>
           ) : (

@@ -39,7 +39,7 @@ code {
 
 } */
 
-.container {
+.main-section {
   height: 800px;
   padding: 10px;
 }
@@ -47,6 +47,39 @@ code {
 .homepage-title {
   color:rgb(46, 161, 227);
   font-weight:bold;
+}
+
+.teacher-page {
+  display:flex;
+  flex-direction: row;
+}
+
+.signup-section {
+  width: 40%;
+}
+
+.signup-form {
+  display:flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.signup-form input, button {
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  margin:5px;
+}
+
+.signup-form button {
+  background-color:rgb(148, 193, 218);
+  margin-top: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.teacher-list {
+  width: 60%;
 }
 
 .teacher-card {

@@ -25,7 +25,7 @@ export default function MainSection() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div className="main-page">
+    <div className="components">
       <Header />
       {/* We are passing the currentPage from state and the function to update it */}
       <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
