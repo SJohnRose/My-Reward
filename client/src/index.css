@@ -16,9 +16,28 @@ code {
   background-color: rgb(46, 161, 227);
 }
 
+.navbar {
+  height: 50px;
+  background-color:rgb(148, 193, 218);
+}
+
+.navbar-ul {
+  
+  display:flex;
+  font-size: 20px;
+  flex-direction: row;
+  list-style: none;
+  justify-content: left;
+}
+
+.navbar-li {
+  padding-left: 5px;
+  padding-right: 45px;
+}
+
 .container {
   height: 800px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .homepage-title {
