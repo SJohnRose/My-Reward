@@ -11,9 +11,6 @@ const Teacher = () => {
 
     return (
       <main className="teacher-page">
-        <div className="signup-section">
-            <SignUp />
-        </div>
         <div className="teacher-list">
           {loading ? (
             <div>Loading...</div>
@@ -23,6 +20,9 @@ const Teacher = () => {
               title="List of teachers..."
             />
           )}
+        </div>
+        <div className="signup-section">
+            <SignUp />
         </div>
       </main>
     );
