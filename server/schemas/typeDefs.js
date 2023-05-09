@@ -4,8 +4,14 @@ const typeDefs = gql`
   type Teacher {
     _id: ID
     name: String
+    email: String
     password: String
     students: [Student]
+  }
+
+  type Auth {
+    token: ID!
+    teacher: Teacher
   }
 
   type Student {
@@ -32,7 +38,10 @@ const typeDefs = gql`
 
   type Mutation {
     # Set the required fields for new Teacher
-    addTeacher(name: String!, password: String!): Teacher
+    addTeacher(name: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+
+    
   }
 `;
 
