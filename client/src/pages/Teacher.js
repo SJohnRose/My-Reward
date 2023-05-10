@@ -1,17 +1,17 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_TEACHERS } from '../utils/queries';
-import TeacherList from '../components/TeacherList';
-import SignUp from './SignUp';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_TEACHERS } from '../utils/queries';
+// import TeacherList from '../components/TeacherList';
+import Login from './Login';
 
 
 const Teacher = () => {
-    const { loading, data } = useQuery(QUERY_TEACHERS);
-    const teachers = data?.teachers || [];
+    // const { loading, data } = useQuery(QUERY_TEACHERS);
+    // const teachers = data?.teachers || [];
 
     return (
       <main className="teacher-page">
-        <div className="teacher-list">
+        {/* <div className="teacher-list">
           {loading ? (
             <div>Loading...</div>
           ) : (
@@ -20,9 +20,9 @@ const Teacher = () => {
               title="List of teachers..."
             />
           )}
-        </div>
-        <div className="signup-section">
-            <SignUp />
+        </div> */}
+        <div className="login-section">
+            <Login email ='ian@gmail.com'/>
         </div>
       </main>
     );

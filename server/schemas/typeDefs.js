@@ -32,7 +32,7 @@ const typeDefs = gql`
     teachers: [Teacher]
     students: [Student]
     # Query to return a single teacher and student using ID parameter
-    teacher(id: ID!): Teacher
+    teacher(email: String!): Teacher
     student(id: ID!): Student
   }
 

@@ -54,29 +54,29 @@ code {
   flex-direction: row;
 }
 
-.signup-section {
+.login-section {
   width: 30%;
 }
 
-.signup-title {
+.login-title {
   margin-left: 10px;
 }
 
-.signup-form {
+.login-form {
   display:flex;
   flex-direction: column;
   font-size: 20px;
   margin-left: 10px;
 }
 
-.signup-form input, button {
+.login-form input, button {
   width: 70%;
   height: 50px;
   font-size: 20px;
   margin:5px;
 }
 
-.signup-form button {
+.login-form button {
   background-color:rgb(148, 193, 218);
   margin-top: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

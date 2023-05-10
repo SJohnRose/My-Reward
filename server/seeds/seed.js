@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const Teacher = require('../models');
+const {Teacher} = require('../models');
 
 const teacherData = require('./teacherData.json');
 

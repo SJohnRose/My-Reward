@@ -7,8 +7,8 @@ const resolvers = {
     teachers: async () => {
       return await Teacher.find({});
     },
-    teacher: async (parent,{ teacherId}) => {
-      return Teacher.findOne({ _id: teacherId});
+    teacher: async (parent,{ email}) => {
+      return Teacher.findOne({ email: email});
     },
     students: async () => {
       return await Student.find({});
