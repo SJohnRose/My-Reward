@@ -6,7 +6,6 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
-    students: [Student]
   }
 
   type Auth {
@@ -17,31 +16,49 @@ const typeDefs = gql`
   type Student {
     _id: ID
     studentCode: String
-    password: String
-    rewards: [Reward]
+    studentName: String
+    class: String
+    email: String
   }
 
   type Reward {
     _id: ID
-    category: String
-    points: Int
+    date: Date
+    studentId: Student
+    teacherId: Teacher
+    prize: Prize
   }
 
+  type Prize {
+    _id: ID!
+    category: String!
+    description: String
+    points: Int!
+  }
 
   type Query {
     teachers: [Teacher]
     students: [Student]
+    rewards: [Reward]
+    prize: [Prize]
     # Query to return a single teacher and student using ID parameter
     teacher(email: String!): Teacher
     student(id: ID!): Student
+
+    reward(id: ID!): Reward
+    prize(category: String!): Prize
   }
 
   type Mutation {
     # Set the required fields for new Teacher
     addTeacher(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
     
+    addStudent(studentCode: String!, studentName: String!, class: String!, email: String! ): Student
+    removeStudent(studentCode: String!): Student
+    addReward(studentId: ID1, teacherId: ID!, prize: ID!): Reward
+    updateStudent(studentCode: String!, studentName: String!, class: String!, email: String! ): Student
+
   }
 `;
 
