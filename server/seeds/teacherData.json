@@ -8,6 +8,11 @@
       "name": "Colleen Brown",
       "email": "colleen@gmail.com",
       "password": "password12345"
+    },
+    {
+      "name": "Peter Sonneveld",
+      "email": "peter@gmail.com",
+      "password": "password12345"
     }
 ]
   

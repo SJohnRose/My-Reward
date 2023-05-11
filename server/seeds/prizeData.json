@@ -1,0 +1,12 @@
+[
+    {
+      "category": "Academic",
+      "description": "Completed excellent piece of work",
+      "points" : 50
+    },
+    {
+        "category": "Behaviour",
+        "description": "Contributed positively towards group task",
+        "points" : 150
+    }
+]

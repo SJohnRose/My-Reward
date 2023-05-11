@@ -1,4 +1,4 @@
-const { Teacher, Student } = require('../models');
+const { Teacher, Student, Reward, Prize } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -14,8 +14,14 @@ const resolvers = {
       return await Student.find({});
     },
     student: async (parent,args) => {
-      return await Student.findById(args.id);
+      return await Student.findOne(args.studentCode);
     },
+    rewards: async () => {
+      return await Reward.find({});
+    },
+    prizes: async () => {
+      return await Prize.find({});
+    }
   },
 
   Mutation: {
@@ -40,7 +46,13 @@ const resolvers = {
       const token = signToken(teacher);
       return { token, teacher };
     },
-
+    addStudent: async (parent, {studentCode, studentName, studentClass, email}) => {
+      const student = await Student.create({studentCode, studentName, studentClass, email});
+      return student;
+    },
+    removeStudent: async (parent, {studentCode}) => {
+      return Student.findOneAndDelete({studentCode: studentCode});
+    }
   },
 };
 

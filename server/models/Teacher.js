@@ -6,7 +6,6 @@ const Student = require('./Student');
 
 const teacherSchema = new Schema(
   {
-    _id: Schema.Types.ObjectId,
     name: {
       type: String,
       required: true,

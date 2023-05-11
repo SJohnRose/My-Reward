@@ -1,4 +1,5 @@
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
 
 const prizeSchema = new Schema(
   {
@@ -17,5 +18,5 @@ const prizeSchema = new Schema(
 }
 );
 
-
-module.exports = prizeSchema;
+const Prize = mongoose.model('Prize', prizeSchema);
+module.exports = Prize;

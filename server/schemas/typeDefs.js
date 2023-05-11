@@ -14,16 +14,16 @@ const typeDefs = gql`
   }
 
   type Student {
-    _id: ID
+    _id: ID!
     studentCode: String
     studentName: String
-    class: String
+    studentClass: String
     email: String
   }
 
   type Reward {
-    _id: ID
-    date: Date
+    _id: ID!
+    date: String
     studentId: Student
     teacherId: Teacher
     prize: Prize
@@ -40,12 +40,11 @@ const typeDefs = gql`
     teachers: [Teacher]
     students: [Student]
     rewards: [Reward]
-    prize: [Prize]
+    prizes: [Prize]
     # Query to return a single teacher and student using ID parameter
     teacher(email: String!): Teacher
     student(id: ID!): Student
 
-    reward(id: ID!): Reward
     prize(category: String!): Prize
   }
 
@@ -54,10 +53,10 @@ const typeDefs = gql`
     addTeacher(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     
-    addStudent(studentCode: String!, studentName: String!, class: String!, email: String! ): Student
+    addStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String! ): Student
     removeStudent(studentCode: String!): Student
-    addReward(studentId: ID1, teacherId: ID!, prize: ID!): Reward
-    updateStudent(studentCode: String!, studentName: String!, class: String!, email: String! ): Student
+    addReward(studentId: ID!, teacherId: ID!, prize: ID!): Reward
+    updateStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String! ): Student
 
   }
 `;

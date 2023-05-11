@@ -1,0 +1,20 @@
+[
+    {
+      "studentCode": "HUG001",
+      "studentName": "Nathan Hughes",
+      "studentClass" : "9A",
+      "email": "nathan@gmail.com"
+    },
+    {
+        "studentCode": "DEC001",
+        "studentName": "Cooper Decker",
+        "studentClass" : "10B",
+        "email": "cooper@gmail.com"
+    },
+    {
+        "studentCode": "THO001",
+        "studentName": "Matthew Thompson",
+        "studentClass" : "7C",
+        "email": "matthew@gmail.com"
+    }
+]
