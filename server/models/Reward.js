@@ -1,18 +1,24 @@
 const { Schema, model } = require('mongoose');
+const Prize = require('./Prize');
 
 const rewardSchema = new Schema(
   {
-    category: {
-      type: String,
-      required: true,
+    date: {
+      type: Date,
+      default: Date.now,
     },
-    points: {
-      type: Number,
-      required: true
+    studentId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Student'
     },
+    teacherId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Teacher'
+    },
+    prize : Prize.schema
     
   }
 );
 
-
-module.exports = rewardSchema;
+const Reward = model('Reward', rewardSchema);
+module.exports = Reward;

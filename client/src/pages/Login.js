@@ -6,6 +6,8 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_TEACHER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
+import SignUp from './SignUp';
+import TeacherOptions from './TeacherOptions';
 
 export default function Login(props) {
     
@@ -73,7 +75,7 @@ export default function Login(props) {
     
     return (
       <div>
-        <h2 className="login-title">Login </h2>
+        
         {/* <div> */}
             {/* {JSON.stringify(data)} */}
             {/* <select name='teacher' >
@@ -86,12 +88,12 @@ export default function Login(props) {
         {/* </div> */}
         <div>
         {data ? (
-              <p>
-                Success! You may now head{' '}
-                {/* <Link to="/">back to the homepage.</Link> */}
-              </p>
+              <TeacherOptions />
+              
               ) : (
+                
         <form className="login-form" onSubmit={handleFormSubmit}>
+          <h2 className="login-title">Login </h2>
           Email:
           <input
             value={formState.email}

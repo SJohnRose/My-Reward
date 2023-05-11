@@ -9,11 +9,16 @@ const studentSchema = new Schema(
       required: true,
       trim: true
     },
-    password: {
+    studentName : {
+      type: String,
+      required: true,
+      trim: true
+    },
+    class: {
       type: String,
       required: true
-    },
-    reward: [Reward]
+    }
+    
   }
 );
 

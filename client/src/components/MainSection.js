@@ -4,6 +4,7 @@ import Teacher from '../pages/Teacher';
 import NavBar from './NavBar';
 import Header from './Header';
 import Footer from './Footer';
+import Student from '../pages/Student';
 
 export default function MainSection() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -16,9 +17,9 @@ export default function MainSection() {
     if (currentPage === 'Teacher') {
       return <Teacher />;
     }
-    // if (currentPage === 'Student') {
-    //   return <Student />;
-    // }
+    if (currentPage === 'Student') {
+      return <Student />;
+    }
     
   };
 

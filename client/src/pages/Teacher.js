@@ -1,28 +1,31 @@
-import React from 'react';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_TEACHERS } from '../utils/queries';
-// import TeacherList from '../components/TeacherList';
+import {React, useState} from 'react';
+
 import Login from './Login';
+import SignUp from './SignUp';
+import TeacherOptions from './TeacherOptions';
+
 
 
 const Teacher = () => {
-    // const { loading, data } = useQuery(QUERY_TEACHERS);
-    // const teachers = data?.teachers || [];
+  const [currentPage, setCurrentPage] = useState('Login');
 
+  const renderPage = () => {
+    if (currentPage === 'Login') {
+      return <Login />;
+    }
+    if (currentPage === 'SignUp') {
+      return <SignUp />;
+    }
+    if (currentPage === 'Options') {
+      return <TeacherOptions />;
+    }
+    
+  };
     return (
       <main className="teacher-page">
-        {/* <div className="teacher-list">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <TeacherList
-              teachers={teachers}
-              title="List of teachers..."
-            />
-          )}
-        </div> */}
+        
         <div className="login-section">
-            <Login email ='ian@gmail.com'/>
+            {renderPage()}
         </div>
       </main>
     );

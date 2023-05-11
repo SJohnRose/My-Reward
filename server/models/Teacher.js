@@ -1,9 +1,12 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Reward = require('./Reward');
+const Student = require('./Student');
 
 
 const teacherSchema = new Schema(
   {
+    _id: Schema.Types.ObjectId,
     name: {
       type: String,
       required: true,
@@ -20,7 +23,7 @@ const teacherSchema = new Schema(
       required: true,
       minlength: 8,
     },
-     
+       
   }
 );
 
