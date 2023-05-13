@@ -14,10 +14,10 @@ export default function MainSection() {
     if (currentPage === 'Home') {
       return <Home />;
     }
-    if (currentPage === 'Teacher') {
-      return <Teacher />;
-    }
     if (currentPage === 'Student') {
+      return <Student />;
+    }
+    if (currentPage === 'Reward') {
       return <Student />;
     }
     

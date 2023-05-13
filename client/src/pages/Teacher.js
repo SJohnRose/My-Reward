@@ -9,23 +9,11 @@ import TeacherOptions from './TeacherOptions';
 const Teacher = () => {
   const [currentPage, setCurrentPage] = useState('Login');
 
-  const renderPage = () => {
-    if (currentPage === 'Login') {
-      return <Login />;
-    }
-    if (currentPage === 'SignUp') {
-      return <SignUp />;
-    }
-    if (currentPage === 'Options') {
-      return <TeacherOptions />;
-    }
-    
-  };
-    return (
-      <main className="teacher-page">
+      return (
+      <main className="page">
         
         <div className="login-section">
-            {renderPage()}
+            <h2> Manage Student Page</h2>
         </div>
       </main>
     );

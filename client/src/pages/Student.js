@@ -2,8 +2,9 @@ import React from 'react';
 
 const Student = () => {
 return (
-    <div>
+    <div className="page">
         <h1> Student Page under construction</h1>
+        <button > </button>
     </div>
 );
 }

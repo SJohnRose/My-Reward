@@ -2,19 +2,16 @@ import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './App.css';
 import './index.css';
 
-import Home from './pages/Home';
-import Teacher from './pages/Teacher';
-import SignUp from './pages/SignUp';
 import Login from './pages/Login';
-
+import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import MainSection from './components/MainSection';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -39,42 +36,25 @@ const client = new ApolloClient({
 });
 
 
+
 function App() {
   return (
-    <ApolloProvider client={client}>
-      {/* <Router> */}
-      <div className = "main-section">
-        <MainSection />
-        {/* <Header /> */}
-          {/* <div className="container"> */}
-             {/* <Routes>
-              <Route 
-                path="/" 
-                element={<Teacher />}
-              /> */}
-              {/* <Route 
-                path="/login" 
-                element={<Login />}
-              />
-              <Route 
-                path="/signUp" 
-                element={<SignUp />}
-              />
-              <Route 
-                path="/me" 
-                element={<Teacher />}
-              />
-              <Route 
-                path="/profiles/:profileId"
-                element={<Teacher />}
-              /> */}
-            {/* </Routes> 
-          </div>
+    <>
+      <Header />
+      <div>
+        <ApolloProvider client={client}>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/login" element={<Login />}></Route>  
+        </Routes>
+        </ApolloProvider>
         <Footer />
-        </div>
-      </Router> */}
       </div>
-    </ApolloProvider>
+    </>
+   
+    
+    
+    
   );
 }
 

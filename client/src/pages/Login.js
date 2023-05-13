@@ -87,11 +87,11 @@ export default function Login(props) {
             </select> */}
         {/* </div> */}
         <div>
-        {data ? (
+        {/* {data ? (
               <TeacherOptions />
               
-              ) : (
-                
+              ) : ( */}
+              
         <form className="login-form" onSubmit={handleFormSubmit}>
           <h2 className="login-title">Login </h2>
           Email:
@@ -112,7 +112,8 @@ export default function Login(props) {
           <button type="submit">Login</button>
           
         </form>
-        )}
+        {/* ) */}
+        {/* } */}
 
         {error && (
           <div>

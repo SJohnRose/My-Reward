@@ -12,6 +12,23 @@ code {
     monospace;
 }
 
+.page, .home-page {
+  background-color:rgb(255, 240, 255); 
+  width: 100%;
+  height: 800px;
+}
+
+.home-page {
+  display: flex;
+  
+}
+
+.components{
+  background-color: rgb(138, 53, 67);
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   background-color: rgb(46, 161, 227);
 }
@@ -42,6 +59,7 @@ code {
 .main-section {
   height: 800px;
   padding: 10px;
+  background-color:rgb(89, 94, 123)
 }
 
 .homepage-title {
@@ -55,7 +73,7 @@ code {
 }
 
 .login-section {
-  width: 30%;
+  width: 40%;
 }
 
 .login-title {
@@ -70,7 +88,7 @@ code {
 }
 
 .login-form input, button {
-  width: 70%;
+  width: 60%;
   height: 50px;
   font-size: 20px;
   margin:5px;
