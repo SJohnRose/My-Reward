@@ -36,3 +36,15 @@ export const ADD_STUDENT = gql`
   }
 `;
 
+export const REMOVE_STUDENT = gql`
+  mutation removeStudent($studentCode: String!) {
+    removeStudent(studentCode: $studentCode) {
+        _id
+        studentCode
+        studentName
+        studentClass
+        email
+    }
+  }
+`;
+

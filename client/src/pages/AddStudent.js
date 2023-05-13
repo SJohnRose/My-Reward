@@ -46,7 +46,7 @@ export default function AddStudent(props) {
         {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/student">back.</Link>
               </p>
          ) : (
               
