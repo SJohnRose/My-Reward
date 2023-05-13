@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Student from './pages/Student';
 import AddStudent from './pages/AddStudent';
+import AddReward from './pages/AddReward';
 import DeleteStudent from './pages/DeleteStudent';
 import Profile from './pages/Profile';
 import Header from './components/Header';
@@ -55,6 +56,7 @@ function App() {
           <Route path="/student" element={<Student />}></Route> 
           <Route path="/me" element={<Student />}></Route>   
           <Route path="/add-student" element={<AddStudent />}></Route>  
+          <Route path="/add-reward" element={<AddReward />}></Route> 
           <Route path="/delete-student" element={<DeleteStudent />}></Route> 
           <Route path="/profile" element={<Profile />}></Route> 
           <Route path="/profile/:profileId" element={<Profile />}></Route> 

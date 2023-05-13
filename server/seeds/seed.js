@@ -1,9 +1,10 @@
 const db = require('../config/connection');
-const {Teacher, Student, Prize} = require('../models');
+const {Teacher, Student, Prize, Reward} = require('../models');
 
 const teacherData = require('./teacherData.json');
 const studentData = require('./studentData.json');
 const prizeData = require('./prizeData.json');
+const rewardData = require('./rewardData.json');
 
 db.once('open', async () => {
 try {
@@ -15,6 +16,9 @@ try {
 
   await Prize.deleteMany({});
   await Prize.create(prizeData);
+
+  await Reward.deleteMany({});
+  await Reward.create(rewardData);
 
   console.log('all done!');
   process.exit(0);

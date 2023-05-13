@@ -6,7 +6,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 
 const LoginPage = () => {
-    const { loading, data } = useQuery(QUERY_TEACHERS);
+    const { loading, error, data } = useQuery(QUERY_TEACHERS);
     const teachers = data?.teachers || [];
     return (
         <main className="home-page">

@@ -7,15 +7,18 @@ const rewardSchema = new Schema(
       type: Date,
       default: Date.now,
     },
-    studentId: {
+    student: {
       type: Schema.Types.ObjectId,
       ref: 'Student'
     },
-    teacherId: {
+    teacher: {
       type: Schema.Types.ObjectId,
       ref: 'Teacher'
     },
-    prize : Prize.schema
+    prize : {
+      type: Schema.Types.ObjectId,
+      ref: 'Prize'
+    }
     
   }
 );

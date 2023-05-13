@@ -17,7 +17,7 @@ const resolvers = {
       return await Student.findOne(args.studentCode);
     },
     rewards: async () => {
-      return await Reward.find({});
+      return await Reward.find({}).populate('student').populate('teacher').populate('prize');
     },
     prizes: async () => {
       return await Prize.find({});
@@ -62,6 +62,13 @@ const resolvers = {
     },
     removeStudent: async (parent, {studentCode}) => {
       return Student.findOneAndDelete({studentCode: studentCode});
+    },
+    updateStudent: async (parent, {studentCode, studentName, studentClass, email}) => {
+      return Student.findOneAndUpdate({studentCode, studentName, studentClass, email});
+    },
+    addReward: async(parent, {date, student, teacher, prize}) => {
+      const reward = Reward.create( {date, student, teacher, prize});
+      return reward;
     }
   },
 };

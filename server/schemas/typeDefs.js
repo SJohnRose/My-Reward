@@ -24,8 +24,8 @@ const typeDefs = gql`
   type Reward {
     _id: ID!
     date: String
-    studentId: Student
-    teacherId: Teacher
+    student: Student
+    teacher: Teacher
     prize: Prize
   }
 
@@ -56,7 +56,7 @@ const typeDefs = gql`
     
     addStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String!): Student
     removeStudent(studentCode: String!): Student
-    addReward(studentId: ID!, teacherId: ID!, prize: ID!): Reward
+    addReward(student: ID!, teacher: ID!, prize: ID!): Reward
     updateStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String! ): Student
 
   }

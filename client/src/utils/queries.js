@@ -11,6 +11,19 @@ export const QUERY_TEACHERS = gql`
   }
 `;
 
+export const QUERY_STUDENTS = gql`
+  query GetStudents {
+    students {
+      _id
+      studentCode
+      studentClass
+      studentName
+      email
+    }
+  }
+`;
+
+
 export const QUERY_SINGLE_TEACHER = gql`
   query GetSingleTeacher($email: String!) {
     teacher(email: $email) {
@@ -37,6 +50,33 @@ export const QUERY_ME = gql`
       _id
       name
       
+    }
+  }
+`;
+
+export const QUERY_REWARDS = gql`
+  query GetRewards {
+    reward {
+      _id
+      date
+      student {
+        _id
+        studentCode
+        studentName
+        studentClass
+        email
+      }
+      teacher {
+        _id
+        name
+        email
+      }
+      prize {
+        _id
+        category
+        description
+        points
+      }
     }
   }
 `;
