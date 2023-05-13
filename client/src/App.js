@@ -10,6 +10,7 @@ import './index.css';
 
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Student from './pages/Student';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -46,6 +47,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>  
+          <Route path="/student" element={<Student />}></Route>  
+          <Route path="/add-student" element={<Student />}></Route>  
         </Routes>
         </ApolloProvider>
         <Footer />

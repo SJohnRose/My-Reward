@@ -11,3 +11,15 @@ export const LOGIN_TEACHER = gql`
     }
   }
 `;
+
+export const ADD_TEACHER = gql`
+  mutation addTeacher($name: String!, $email: String!, $password: String!) {
+    addTeacher(name: $name, email: $email, password: $password) {
+      token
+      teacher {
+        _id
+        name
+      }
+    }
+  }
+`;

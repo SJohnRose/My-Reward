@@ -6,8 +6,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_TEACHER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-import SignUp from './SignUp';
-import TeacherOptions from './TeacherOptions';
+
 
 export default function Login(props) {
     
