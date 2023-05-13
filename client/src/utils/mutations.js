@@ -23,3 +23,16 @@ export const ADD_TEACHER = gql`
     }
   }
 `;
+
+export const ADD_STUDENT = gql`
+  mutation addStudent($studentCode: String!, $studentName: String!, $studentClass: String!, $email: String!) {
+    addStudent(studentCode: $studentCode, studentName: $studentName, studentClass: $studentClass, email: $email) {
+        _id
+        studentCode
+        studentName
+        studentClass
+        email
+    }
+  }
+`;
+

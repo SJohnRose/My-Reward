@@ -2,16 +2,15 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { ADD_TEACHER } from '../utils/mutations';
-import Auth from '../utils/auth';
+import { ADD_STUDENT } from '../utils/mutations';
 
 
 
-export default function SignUp(props) {
+export default function AddStudent(props) {
     
-    const [formState, setFormState] = useState({ name: '', email: '', password: '' });
-    const [addTeacher, { error, data }] = useMutation(ADD_TEACHER);
-          
+    const [formState, setFormState] = useState({ studentCode: '', studentName: '',  studentClass: '', email: '', });
+    const [addStudent, { error, data }] = useMutation(ADD_STUDENT);
+    console.log(data);    
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -27,15 +26,16 @@ export default function SignUp(props) {
       e.preventDefault();
       console.log(formState);
       try {
-        const { data } = await addTeacher({
+        const { data } = await addStudent({
         variables: { ...formState },
       });
-
-      Auth.login(data.addTaacher.token);
+      
       } 
+      
         catch (e) {
-        console.error(e);
+        console.error(e+"form submit error");
       }
+      console.log(data);
     }
 
        
@@ -51,11 +51,25 @@ export default function SignUp(props) {
          ) : (
               
         <form className="login-form" onSubmit={handleFormSubmit}>
-          <h2 className="login-title">New Teacher Sign Up </h2>
-          Name:
+          <h2 className="login-title">Add New Student </h2>
+          Student Code:
           <input
-            value={formState.name}
-            name="name"
+            value={formState.studentCode}
+            name="studentCode"
+            onChange={handleInputChange}
+            type="text"
+          />
+          Student Name:
+          <input
+            value={formState.studentName}
+            name="studentName"
+            onChange={handleInputChange}
+            type="text"
+          />
+          Class:
+          <input
+            value={formState.studentClass}
+            name="studentClass"
             onChange={handleInputChange}
             type="text"
           />
@@ -66,15 +80,9 @@ export default function SignUp(props) {
             onChange={handleInputChange}
             type="text"
           />
-          Password:
-          <input
-            value={formState.password}
-            name="password"
-            onChange={handleInputChange}
-            type="password"
-          />
+          
                    
-          <button type="submit">Sign Up</button>
+          <button type="submit">SUBMIT</button>
           
         </form>
          )}

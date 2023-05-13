@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_TEACHER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import Student from './Student';
 
 
 
@@ -86,11 +87,14 @@ export default function Login(props) {
             </select> */}
         {/* </div> */}
         <div>
-        {/* {data ? (
-              <TeacherOptions />
-              
-              ) : ( */}
-              
+        {data ? (
+          
+          <p>
+            Login Success! {data.login.teacher._id} You may now head to {}
+            <Link to={{ pathname: `/profile/${data.login.teacher._id}`}}> Profile Page </Link>
+          </p>
+        ) :
+        (     
         <form className="login-form" onSubmit={handleFormSubmit}>
           <h2 className="login-title">Login </h2>
           Email:
@@ -111,9 +115,7 @@ export default function Login(props) {
           <button type="submit">Login</button>
           
         </form>
-        {/* ) */}
-        {/* } */}
-
+        )}
         {error && (
           <div>
             <p className="error-text">{error.message}</p>

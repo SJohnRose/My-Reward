@@ -11,6 +11,8 @@ import './index.css';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Student from './pages/Student';
+import AddStudent from './pages/AddStudent';
+import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SignUp from './pages/SignUp';
@@ -49,8 +51,11 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>  
           <Route path="/signup" element={<SignUp />}></Route> 
-          <Route path="/student" element={<Student />}></Route>  
-          <Route path="/add-student" element={<Student />}></Route>  
+          <Route path="/student" element={<Student />}></Route> 
+          <Route path="/me" element={<Student />}></Route>   
+          <Route path="/add-student" element={<AddStudent />}></Route>  
+          <Route path="/profile" element={<Profile />}></Route> 
+          <Route path="/profile/:profileId" element={<Profile />}></Route> 
         </Routes>
         </ApolloProvider>
         <Footer />

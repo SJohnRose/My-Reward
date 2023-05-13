@@ -43,8 +43,9 @@ const typeDefs = gql`
     prizes: [Prize]
     # Query to return a single teacher and student using ID parameter
     teacher(email: String!): Teacher
+    profile(profileId: ID!): Teacher
+    me: Teacher
     student(id: ID!): Student
-
     prize(category: String!): Prize
   }
 
@@ -53,7 +54,7 @@ const typeDefs = gql`
     addTeacher(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     
-    addStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String! ): Student
+    addStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String!): Student
     removeStudent(studentCode: String!): Student
     addReward(studentId: ID!, teacherId: ID!, prize: ID!): Reward
     updateStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String! ): Student
