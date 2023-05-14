@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Navigate, useParams} from 'react-router-dom';
+import {Link, Navigate, useParams} from 'react-router-dom';
 import addStudentImage from '../assets/images/new-student.png';
 import deleteStudentImage from '../assets/images/delete-student.png';
 import updateStudentImage from '../assets/images/update-student.png';
@@ -26,7 +26,7 @@ if(choice==='update-student') {
 }
 if(choice==='add-reward') {
     return (
-        <Navigate to="/add-reward" />
+        <Navigate to="/add-reward" state={{ teacherId: profileId }}/>
      );
 }
 

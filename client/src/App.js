@@ -14,6 +14,7 @@ import Student from './pages/Student';
 import AddStudent from './pages/AddStudent';
 import AddReward from './pages/AddReward';
 import DeleteStudent from './pages/DeleteStudent';
+import UpdateStudent from './pages/UpdateStudent';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -56,6 +57,7 @@ function App() {
           <Route path="/student" element={<Student />}> </Route> 
           <Route path="/add-student" element={<AddStudent />}></Route>  
           <Route path="/delete-student" element={<DeleteStudent />}></Route> 
+          <Route path="/update-student" element={<UpdateStudent />}></Route> 
           <Route path="/add-reward" element={<AddReward />}></Route> 
           <Route path="/me/:profileId" element={<Student />}></Route>   
           <Route path="/profile" element={<Profile />}></Route> 

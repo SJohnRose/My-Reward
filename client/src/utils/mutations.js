@@ -49,8 +49,8 @@ export const REMOVE_STUDENT = gql`
 `;
 
 export const ADD_REWARD = gql`
-  mutation addReward($date: String!, $student: ID!, $teacher: ID!, $prize: ID!) {
-    addReward(date: $date, student: $student, teacher: $teacher, prize: $prize) {
+  mutation addReward($student: ID!, $teacher: ID!, $prize: ID!) {
+    addReward(student: $student, teacher: $teacher, prize: $prize) {
         _id
         date
         
