@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import {Navigate, useParams} from 'react-router-dom';
+import addStudentImage from '../assets/images/new-student.png';
+import deleteStudentImage from '../assets/images/delete-student.png';
+import updateStudentImage from '../assets/images/update-student.png';
+import rewardStudentImage from '../assets/images/reward-student.png';
 
 const Student = (props) => {
 const [choice, setChoice] = useState('');
@@ -28,11 +32,26 @@ if(choice==='add-reward') {
 
 return (
     <div className="page">
+        
         <h1> Hi {profileId} Dashboard </h1>
-        <button onClick={() => setChoice('add-student')}> Add Student </button>
-        <button onClick={() => setChoice('delete-student')}> Remove Student </button>
-        <button onClick={() => setChoice('update-student')}> Update Student </button>
-        <button onClick={() => setChoice('add-reward')}> Reward Student </button>
+        <div className="student-buttons">
+            <div className="choice">
+                <img className="choice-image" src ={addStudentImage} alt="New Student Icon"/>
+                <button className="single-button" onClick={() => setChoice('add-student')}> Add Student </button>
+            </div>
+            <div className="choice">
+                <img className="choice-image" src ={deleteStudentImage} alt="Delete Student Icon"/>   
+                <button className="single-button" onClick={() => setChoice('delete-student')}> Remove Student </button>
+            </div>
+            <div className="choice">
+                <img className="choice-image" src ={updateStudentImage} alt="Update Student Icon"/>   
+                <button className="single-button" onClick={() => setChoice('update-student')}> Update Student </button>
+            </div>
+            <div className="choice">
+                <img className="choice-image" src ={rewardStudentImage} alt="Reward Student Icon"/>   
+                <button className="single-button" onClick={() => setChoice('add-reward')}> Reward Student </button>
+            </div>
+        </div>
     </div>
 );
 }

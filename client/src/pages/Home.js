@@ -7,16 +7,10 @@ import Login from './Login';
 
 
 const Home = () => {
-    const teachersQuery = useQuery(QUERY_TEACHERS);
-    const teachers = teachersQuery.data?.teachers || [];
-    
+       
     const rewardsQuery = useQuery(QUERY_REWARDS);
     const rewards = rewardsQuery.data?.rewards || [];
-    console.log(rewardsQuery.data);
-
-    const [currentPage, setCurrentPage] = useState('Login');
-
-    
+            
     return (
       <main className="home-page">
               
