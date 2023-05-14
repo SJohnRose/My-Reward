@@ -70,7 +70,7 @@ code {
   font-size:large;
 }
 
-.login-title, .reward-title, .select-title {
+.login-title, .reward-title, .select-title, .entry-title {
   margin-left: 20px;
   padding-top: 30px;
   margin-bottom: 20px;
@@ -83,28 +83,28 @@ code {
   margin-bottom: 20px;
 }
 
-.login-form, .signup-form {
+.login-form, .signup-form, .entry-form {
   display:flex;
   flex-direction: column;
   font-size: 20px;
   margin-left: 20px;
 }
 
-.login-form input, button  {
+.login-form input, .login-form button  {
   width: 60%;
   height: 50px;
   font-size: 20px;
   margin-left: 20px;
 }
 
-.signup-form input {
+.signup-form input, .entry-form input {
   width: 30%;
   height: 50px;
   font-size: 20px;
   margin-left: 20px;
 }
 
-.signup-form button {
+.signup-form button, .entry-form button {
   width: 20%;
   margin-left: 80px;
   border-radius: 8px;
@@ -131,15 +131,15 @@ code {
   height: 300px;
 }
 
-.login-form h5, .signup-form h5 {
+.login-form h5, .signup-form h5, .entry-form h5{
   margin-left: 20px;
 }
 
-.login-form input, .signup-form input {
+.login-form input, .signup-form input, .entry-form input {
   margin-bottom: 10px;
 }
 
-.login-form button, .signup-form button {
+.login-form button, .signup-form button, .entry-form button {
   background-color:#60495a;
   margin-top: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -182,6 +182,8 @@ code {
 
 .single-button {
   background-color: #bfc3ba;
+  margin-left: 40px;
+  margin-top: 5px;
 }
 
 .choice-image {

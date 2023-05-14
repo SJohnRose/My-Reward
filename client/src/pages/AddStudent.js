@@ -41,7 +41,7 @@ export default function AddStudent(props) {
        
     
     return (
-      <div>
+      <div className="page">
              
         {data ? (
               <p>
@@ -50,30 +50,30 @@ export default function AddStudent(props) {
               </p>
          ) : (
               
-        <form className="login-form" onSubmit={handleFormSubmit}>
-          <h2 className="login-title">Add New Student </h2>
-          Student Code:
+        <form className="entry-form" onSubmit={handleFormSubmit}>
+          <h2 className="entry-title">Add New Student </h2>
+          <h5>Student Code:</h5>
           <input
             value={formState.studentCode}
             name="studentCode"
             onChange={handleInputChange}
             type="text"
           />
-          Student Name:
+          <h5>Student Name:</h5>
           <input
             value={formState.studentName}
             name="studentName"
             onChange={handleInputChange}
             type="text"
           />
-          Class:
+          <h5>Class:</h5>
           <input
             value={formState.studentClass}
             name="studentClass"
             onChange={handleInputChange}
             type="text"
           />
-          Email:
+          <h5>Email:</h5>
           <input
             value={formState.email}
             name="email"
