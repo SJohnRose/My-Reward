@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_TEACHER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import teacherQuoteImage from '../../src/assets/images/teacher-quote1.png';
 
 
 
@@ -41,8 +42,9 @@ export default function SignUp(props) {
        
     
     return (
-      <div>
-             
+      <div className="page">
+        <div className="signup-section">
+        <div className="signup-section1">  
         {data ? (
               <p>
                 {/* Success! You may now head{' '} */}
@@ -50,23 +52,23 @@ export default function SignUp(props) {
               </p>
          ) : (
               
-        <form className="login-form" onSubmit={handleFormSubmit}>
+        <form className="signup-form" onSubmit={handleFormSubmit}>
           <h2 className="login-title">New Teacher Sign Up </h2>
-          Name:
+          <h5>Name:</h5>
           <input
             value={formState.name}
             name="name"
             onChange={handleInputChange}
             type="text"
           />
-          Email:
+          <h5>Email:</h5>
           <input
             value={formState.email}
             name="email"
             onChange={handleInputChange}
             type="text"
           />
-          Password:
+          <h5>Password:</h5>
           <input
             value={formState.password}
             name="password"
@@ -85,7 +87,13 @@ export default function SignUp(props) {
           </div>
             
         )}
+      </div>
 
+      <div className="signup-section2">
+        
+      </div>
+
+      </div>
       </div>
       
     );
