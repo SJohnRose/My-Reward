@@ -1,30 +1,41 @@
 import {React, useState} from 'react';
 import { useQuery} from '@apollo/client';
-import { QUERY_TEACHERS } from '../utils/queries';
+import { Link } from 'react-router-dom';
+import { QUERY_TEACHERS, QUERY_REWARDS  } from '../utils/queries';
 import TeacherList from '../components/TeacherList';
-import LoginPage from './LoginPage';
-import SignUp from './SignUp';
+import Login from './Login';
+
 
 const Home = () => {
-    const { loading, data } = useQuery(QUERY_TEACHERS);
-    const teachers = data?.teachers || [];
-    //console.log(teachers);
+    const teachersQuery = useQuery(QUERY_TEACHERS);
+    const teachers = teachersQuery.data?.teachers || [];
+    
+    const rewardsQuery = useQuery(QUERY_REWARDS);
+    const rewards = rewardsQuery.data?.rewards || [];
+    console.log(rewardsQuery.data);
+
     const [currentPage, setCurrentPage] = useState('Login');
 
-    const renderPage = () => {
-      if (currentPage === 'Login') {
-        return <LoginPage />;
-      }
-      // if (currentPage === 'Student') {
-      //   return <SignUpPage />;
-      // }
-    };
-
+    
     return (
-      <div>
-      {renderPage()}
-      
-      </div>
+      <main className="home-page">
+              
+              {<div className="teacher-list">
+            {rewards.loading ? (
+              <div>Loading...</div>) : 
+              (
+              <TeacherList
+                rewards={rewards}
+                title="Recent rewards...."
+              />
+              )}
+          </div>}   
+          
+          <div className="login-section">
+            <Login />
+            <p>New User? <Link to="/signup">Sign Up Now </Link></p>
+          </div>
+        </main>
     );
   };
   

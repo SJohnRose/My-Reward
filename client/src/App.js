@@ -53,11 +53,11 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>  
           <Route path="/signup" element={<SignUp />}></Route> 
-          <Route path="/student" element={<Student />}></Route> 
-          <Route path="/me" element={<Student />}></Route>   
+          <Route path="/student" element={<Student />}> </Route> 
           <Route path="/add-student" element={<AddStudent />}></Route>  
-          <Route path="/add-reward" element={<AddReward />}></Route> 
           <Route path="/delete-student" element={<DeleteStudent />}></Route> 
+          <Route path="/add-reward" element={<AddReward />}></Route> 
+          <Route path="/me/:profileId" element={<Student />}></Route>   
           <Route path="/profile" element={<Profile />}></Route> 
           <Route path="/profile/:profileId" element={<Profile />}></Route> 
         </Routes>

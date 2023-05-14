@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className="header">
-        <h1 style={{ fontSize: '3rem' }}>
-          My Rewards
-        </h1>
+        <Link to="/" style={{ fontSize: '3rem' }}>
+          <p>My Rewards</p>
+        </Link>
         <p style={{ fontSize: '1.75rem', fontWeight: '500' }}>
-          Well done on your achievements!
+          Appreciate and reward your students!
         </p>
       </div>
     

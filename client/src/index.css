@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -13,9 +15,10 @@ code {
 }
 
 .page, .home-page {
-  background-color:rgb(255, 240, 255); 
+  background-color:#a9aca9; 
   width: 100%;
-  height: 800px;
+  height: 900px;
+  padding-left: 50px;
 }
 
 .home-page {
@@ -23,48 +26,30 @@ code {
   
 }
 
-.components{
+.components {
   background-color: rgb(138, 53, 67);
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  background-color: rgb(46, 161, 227);
+  background-color: #2f2235;
+  padding-left: 20px;
 }
 
-.navbar {
-  height: 50px;
-  background-color:rgb(148, 193, 218);
-}
-
-.navbar-ul {
-  
-  display:flex;
-  font-size: 20px;
-  flex-direction: row;
-  list-style: none;
-  justify-content: left;
-}
-
-.navbar-li {
-  padding-left: 5px;
-  padding-right: 45px;
-}
-
-/* .nav-link-active {
-
-} */
-
-.main-section {
-  height: 800px;
-  padding: 10px;
-  background-color:rgb(89, 94, 123)
+.header p {
+  color: white;
 }
 
 .homepage-title {
-  color:rgb(46, 161, 227);
+  color: white;
   font-weight:bold;
+}
+
+.homepage-rewards h2 {
+  padding-top: 30px;
+  margin-bottom: 20px;
+  color: #2f2235; 
 }
 
 .teacher-page {
@@ -76,28 +61,51 @@ code {
   width: 40%;
 }
 
-.login-title {
-  margin-left: 10px;
+.login-section p {
+  margin-left: 40px;
+  font-size:large;
+}
+
+.login-title, .reward-title, .select-title {
+  margin-left: 20px;
+  padding-top: 30px;
+  margin-bottom: 20px;
+  color: #2f2235;
+}
+
+.select-students {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .login-form {
   display:flex;
   flex-direction: column;
   font-size: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .login-form input, button {
   width: 60%;
   height: 50px;
   font-size: 20px;
-  margin:5px;
+  margin-left: 20px;
+}
+
+.login-form h5 {
+  margin-left: 20px;
+}
+
+.login-form input {
+  margin-bottom: 10px;
 }
 
 .login-form button {
-  background-color:rgb(148, 193, 218);
+  background-color:#60495a;
   margin-top: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 10px;
 }
 
 .teacher-list {
@@ -107,23 +115,37 @@ code {
 
 .teacher-card {
   height: 70px;
-  width: 50%;
-  background-color:rgb(148, 193, 218);
+  width: 70%;
+  background-color:#bfc3ba;
   margin-bottom: 20px;
+  border-radius: 10px;
+  border-style:inset;
+  
 }
-
-.teacher-options-page {
-  background-color:rgb(148, 193, 218);
+ 
+.prize-list {
   display: flex;
-  flex-direction: row;;
-  justify-content: center;
+  padding: 10px;
+  justify-content: left;
+  margin-top: 30px;
 }
 
-.teacher-option {
-  width: 50px;
-  height: 50px;
+.prize-card {
+  background-color:#60495a;
+  margin: 20px;
+  padding: 10px;
+  height: 200px;
+  width: 300px;
+}
+
+.reward-button {
+  width: 25%;
+  margin-left: 30px;
+  
 }
 
 .footer {
   text-align: center;
+  background-color: #2f2235;
+  height: 50px;
 }

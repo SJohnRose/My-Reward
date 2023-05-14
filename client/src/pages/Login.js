@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_SINGLE_TEACHER, QUERY_TEACHERS } from '../utils/queries';
+import { Link, Navigate} from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_TEACHER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -11,27 +9,12 @@ import Student from './Student';
 
 export default function Login(props) {
     
-    // const [password, setPassword] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [errorMessage, setErrorMessage] = useState('');
-    // const [teacherList, setTeacherList] = useState([]);
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_TEACHER);
           
 
     const handleInputChange = (e) => {
-      // const { target } = e;
-      // const inputType = target.name;
-      // const inputValue = target.value;
-  
-      // if (inputType === 'email') {
-      //   setEmail(inputValue);
-      // } 
-      // else if (inputType === 'password') {
-      //   setPassword(inputValue);
-      // }
         const { name, value } = e.target;
-    
         setFormState({
           ...formState,
           [name]: value,
@@ -42,69 +25,46 @@ export default function Login(props) {
     const handleFormSubmit = async (e) => {
       e.preventDefault();
       console.log(formState);
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
-
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
-    }
-
-    // clear form values
-    setFormState({
+      try {
+          const { data } = await login({
+            variables: { ...formState },
+          });
+          Auth.login(data.login.token);
+      } 
+      catch (e) {
+        console.error(e);
+      }
+    
+      setFormState({
       email: '',
       password: '',
-    });
-      // setPassword('');
-      // setEmail('');
-      // setErrorMessage('');
+      });
     };
 
-    
-    // let getEmail = props.email;
-    // // console.log(getEmail);
-    // // const { loading, error, data } = useQuery(QUERY_TEACHERS);
-    // const { loading, error, data } = useQuery(QUERY_SINGLE_TEACHER, {
-    //   variables: { email: getEmail },
-    // });
-    // if (loading) return 'Loading...';
-    // if (error) return `Error! ${error.message}`;
-      
+     
     
     return (
-      <div>
+      <div> 
         
-        {/* <div> */}
-            {/* {JSON.stringify(data)} */}
-            {/* <select name='teacher' >
-              {data.teachers.map((teacher) => (
-              <option key={teacher.id} value={teacher.name}>
-              {teacher.name}
-              </option>
-              ))}
-            </select> */}
-        {/* </div> */}
         <div>
         {data ? (
           
-          <p>
-            Login Success! {data.login.teacher._id} You may now head to {}
-            <Link to={{ pathname: `/profile/${data.login.teacher._id}`}}> Profile Page </Link>
-          </p>
+          // <p>
+          //   Login Success! {data.login.teacher._id} You may now head to {}
+            <Navigate to={{ pathname: `/profile/${data.login.teacher._id}`}}/> 
+          // </p>
         ) :
         (     
         <form className="login-form" onSubmit={handleFormSubmit}>
           <h2 className="login-title">Login </h2>
-          Email:
+          <h5>Email:</h5>
           <input
             value={formState.email}
             name="email"
             onChange={handleInputChange}
             type="text"
           />
-          Password:
+          <h5>Password:</h5>
           <input
             value={formState.password}
             name="password"
@@ -112,7 +72,7 @@ export default function Login(props) {
             type="password"
           />
                    
-          <button type="submit">Login</button>
+          <button type="submit" className="login-button">Login</button>
           
         </form>
         )}

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
 import { ADD_TEACHER } from '../utils/mutations';
@@ -45,8 +45,8 @@ export default function SignUp(props) {
              
         {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                {/* Success! You may now head{' '} */}
+                <Navigate to="/" replace={true}/>
               </p>
          ) : (
               

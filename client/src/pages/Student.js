@@ -1,15 +1,10 @@
 import React, {useState} from 'react';
-import {Navigate} from 'react-router-dom';
+import {Navigate, useParams} from 'react-router-dom';
 
-const Student = () => {
+const Student = (props) => {
 const [choice, setChoice] = useState('');
+const {profileId} = useParams();
 
-// function addStudent() {
-//     return (
-//     <Navigate to="/add-student" />
-//     );
-    
-// }
 if(choice==='add-student') {
     return (
         <Navigate to="/add-student" />
@@ -25,13 +20,19 @@ if(choice==='update-student') {
         <Navigate to="/update-student" />
      );
 }
+if(choice==='add-reward') {
+    return (
+        <Navigate to="/add-reward" />
+     );
+}
 
 return (
     <div className="page">
-        <h1> Student Page </h1>
+        <h1> Hi {profileId} Dashboard </h1>
         <button onClick={() => setChoice('add-student')}> Add Student </button>
         <button onClick={() => setChoice('delete-student')}> Remove Student </button>
         <button onClick={() => setChoice('update-student')}> Update Student </button>
+        <button onClick={() => setChoice('add-reward')}> Reward Student </button>
     </div>
 );
 }
