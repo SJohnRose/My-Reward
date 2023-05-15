@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const Reward = require('./Reward');
 const Student = require('./Student');
 
@@ -38,7 +38,7 @@ teacherSchema.pre('save', async function (next) {
 
 // compare the incoming password with the hashed password
 teacherSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
+  return bcryptjs.compare(password, this.password);
 };
 
 const Teacher = model('Teacher', teacherSchema);
