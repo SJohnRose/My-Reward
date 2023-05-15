@@ -48,6 +48,18 @@ export const REMOVE_STUDENT = gql`
   }
 `;
 
+export const UPDATE_STUDENT = gql`
+  mutation updateStudent($studentCode: String!, $studentClass: String!) {
+    updateStudent(studentCode: $studentCode, studentClass: $studentClass) {
+        _id
+        studentCode
+        studentName
+        studentClass
+        email
+    }
+  }
+`;
+
 export const ADD_REWARD = gql`
   mutation addReward($student: ID!, $teacher: ID!, $prize: ID!) {
     addReward(student: $student, teacher: $teacher, prize: $prize) {

@@ -3,13 +3,20 @@ import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
 import { ADD_STUDENT } from '../utils/mutations';
+import {QUERY_STUDENTS} from '../utils/queries';
 
 
 
 export default function AddStudent(props) {
     
     const [formState, setFormState] = useState({ studentCode: '', studentName: '',  studentClass: '', email: '', });
-    const [addStudent, { error, data }] = useMutation(ADD_STUDENT);
+    const [addStudent, { error, data }] = useMutation(ADD_STUDENT, {
+      refetchQueries: [
+        QUERY_STUDENTS,
+        'GetStudents'
+      ],
+  
+    });
     console.log(data);    
 
     const handleInputChange = (e) => {

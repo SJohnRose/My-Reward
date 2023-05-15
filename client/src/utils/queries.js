@@ -55,14 +55,14 @@ export const QUERY_SINGLE_PROFILE = gql`
   }`;
  
 export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      name
-      
-    }
+query me($email: String!) {
+  me(email: $email) {
+    _id
+    email
+    name
+    password
   }
-`;
+}`;
 
 export const QUERY_REWARDS = gql`
   query GetRewards {

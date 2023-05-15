@@ -3,7 +3,7 @@ import { Navigate, useLocation} from 'react-router-dom';
 
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_REWARD } from '../utils/mutations';
-import { QUERY_STUDENTS, QUERY_PRIZES} from '../utils/queries';
+import { QUERY_STUDENTS, QUERY_PRIZES, QUERY_REWARDS} from '../utils/queries';
 
 
 export default function AddReward(props) {
@@ -14,12 +14,16 @@ export default function AddReward(props) {
     const prizesQuery = useQuery(QUERY_PRIZES);
     const prizes = prizesQuery.data?.prizes || [];
 
-    // const teacherId=props.teacherId;
     const location = useLocation();
     const {teacherId} = location.state;
     console.log(teacherId);
 
-    const [addReward, { error, data }] = useMutation(ADD_REWARD);
+    const [addReward, { error, data }] = useMutation(ADD_REWARD, {
+      refetchQueries: [
+        QUERY_REWARDS,
+        'GetRewards'
+      ],
+    });
     
     const[studentName, setStudentName] = useState('');
     const[studentReward, setStudentReward] = useState('');

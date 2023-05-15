@@ -57,7 +57,7 @@ const typeDefs = gql`
     addStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String!): Student
     removeStudent(studentCode: String!): Student
     addReward(student: ID!, teacher: ID!, prize: ID!): Reward
-    updateStudent(studentCode: String!, studentName: String!, studentClass: String!, email: String! ): Student
+    updateStudent(studentCode: String!, studentClass: String!): Student
 
   }
 `;

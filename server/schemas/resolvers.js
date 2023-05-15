@@ -26,9 +26,9 @@ const resolvers = {
       return Teacher.findOne({ _id: profileId });
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
-    me: async (parent, args, context) => {
-      if (context.user) {
-        return Teacher.findOne({ _id: context.user._id });
+    me: async (parent, context) => {
+      if (context.teacher) {
+        return Teacher.findOne({ _id: context.teacher._id });
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -63,8 +63,8 @@ const resolvers = {
     removeStudent: async (parent, {studentCode}) => {
       return Student.findOneAndDelete({studentCode: studentCode});
     },
-    updateStudent: async (parent, {studentCode, studentName, studentClass, email}) => {
-      return Student.findOneAndUpdate({studentCode, studentName, studentClass, email});
+    updateStudent: async (parent, {studentCode, studentClass}) => {
+      return Student.findOneAndUpdate({studentCode}, {studentClass}, {new:true});
     },
     addReward: async(parent, {student, teacher, prize}) => {
       const reward = Reward.create( {student, teacher, prize});

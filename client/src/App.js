@@ -59,7 +59,7 @@ function App() {
           <Route path="/delete-student" element={<DeleteStudent />}></Route> 
           <Route path="/update-student" element={<UpdateStudent />}></Route> 
           <Route path="/add-reward" element={<AddReward />}></Route> 
-          <Route path="/me/:profileId" element={<Student />}></Route>   
+          <Route path="/me" element={<Profile />}></Route>   
           <Route path="/profile" element={<Profile />}></Route> 
           <Route path="/profile/:profileId" element={<Profile />}></Route> 
         </Routes>
