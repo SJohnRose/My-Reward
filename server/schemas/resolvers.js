@@ -66,7 +66,8 @@ const resolvers = {
     updateStudent: async (parent, {studentCode, studentClass}) => {
       return Student.findOneAndUpdate({studentCode}, {studentClass}, {new:true});
     },
-    addReward: async(parent, {student, teacher, prize}) => {
+    addReward: async(parent, {student, prize}, context) => {
+      const teacher = context.teacher._id;
       const reward = Reward.create( {student, teacher, prize});
       return reward;
     }

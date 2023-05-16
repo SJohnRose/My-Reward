@@ -1,17 +1,19 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+const { authMiddleware } = require('./utils/auth');
 require('dotenv').config();
 
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context: authMiddleware,
   });
 
 const app = express();
@@ -19,7 +21,7 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use('/images', express.static(path.join(__dirname, '../client/build')));
+// app.use('/images', express.static(path.join(__dirname, '../client/build')));
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static("client/build"));

@@ -14,7 +14,7 @@ return (
         rewards.map((reward) => (
           <div key={reward._id} >
             <div className="teacher-card">
-              <p>{reward.teacher.name} rewarded {reward.student.studentName} with {reward.prize.points} points for <b>{reward.prize.description}</b></p>
+              <p>{reward.teacher?.name} rewarded {reward.student?.studentName} with {reward.prize?.points} points for <b>{reward.prize?.description}</b></p>
             </div>
           </div>
         ))}
