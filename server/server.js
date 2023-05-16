@@ -20,11 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.resolve(__dirname, "client", "build", "index.html")));
+    app.use(express.static(path.resolve(__dirname, "..", "client", "build", "index.html")));
     }
   
     app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+      res.sendFile(path.resolve(__dirname, "..", "client", "build", "index.html"));
 }); 
 
 const startServer = async (typeDefs, resolvers) => {
@@ -34,6 +34,7 @@ const startServer = async (typeDefs, resolvers) => {
     db.once('open', () => {
       app.listen(PORT, () => {
         console.log('Connected to MongoDB');
+        console.log(__dirname+'\\..\\');
         console.log(`API server running on port ${PORT}!`);
         console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
       })
