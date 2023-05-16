@@ -38,7 +38,7 @@ teacherSchema.pre('save', async function (next) {
 
 // compare the incoming password with the hashed password
 teacherSchema.methods.isCorrectPassword = async function (password) {
-  return bcryptjs.compare(password, this.password);
+  return bcrypt.compare(password, this.password);
 };
 
 const Teacher = model('Teacher', teacherSchema);
