@@ -49,8 +49,10 @@ $ npm run develop
 
 # Mock-Up
 The application's appearance and functionality can be seen below.
-
-
+![image](https://github.com/SJohnRose/My-Reward/assets/115912745/da4ab194-1f9f-4ccb-b835-f769f3d9560f)
+![image](https://github.com/SJohnRose/My-Reward/assets/115912745/18816b6b-577c-4af6-ab90-add6bd686244)
+![image](https://github.com/SJohnRose/My-Reward/assets/115912745/0bec6db8-e248-4c97-b98e-00c64b1f622b)
 
 # How to access the application?
-
+Github URL:https://github.com/SJohnRose/My-Reward
+Deployed URL: https://my-reward.herokuapp.com/
