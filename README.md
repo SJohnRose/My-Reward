@@ -54,5 +54,5 @@ The application's appearance and functionality can be seen below.
 ![image](https://github.com/SJohnRose/My-Reward/assets/115912745/0bec6db8-e248-4c97-b98e-00c64b1f622b)
 
 # How to access the application?
-Github URL:https://github.com/SJohnRose/My-Reward
+Github URL:https://github.com/SJohnRose/My-Reward  
 Deployed URL: https://my-reward.herokuapp.com/
