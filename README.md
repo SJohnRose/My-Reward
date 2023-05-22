@@ -12,39 +12,39 @@ I WANT to manage a list of students in a database
 SO THAT I can reward the students for good behaviour or academic excellence.
 
 # Acceptance Criteria
-GIVEN an online rewards application
-WHEN I load the application
-THEN I am presented with a list of recent rewards and Login/Signup section.
-WHEN I enter my account’s email address and password and click on the login button
-THEN I am logged in to the site.
-WHEN I am logged in to the site
-THEN I am presented with options to add student, delete student, update student and reward student.
-WHEN I click on Signup
-THEN I am presented with two inputs for an email address and password and Signup button.
-WHEN I enter a valid email address and a new password and click on the signup button
-THEN my user account is created and I am logged in to the site.
-WHEN I click on the Add Student menu option
-THEN I am presented with input fields for student code, student name, class, email and a submit button.
-WHEN I click on the submit button
-THEN the student details are added to the database.
-WHEN I click on the Delete Student menu option
-THEN I am presented with input field for student code and a submit button.
-WHEN I click on the submit button
-THEN the student with the student code is removed from the database.
-WHEN I click on the Update Student menu option
-THEN I am presented with input fields for student code, student class and a submit button.
-WHEN I click on the submit button
-THEN the student's new class is updated in the database.
-WHEN I click on the Reward Student menu option
-THEN I am presented with a list of students, reward category and a submit button.
-WHEN I click on the submit button
-THEN the student is rewarded points which is added to the database.
-WHEN I click on the Logout button
-THEN I am logged out of the site and returned to the main page.  
+GIVEN an online rewards application  
+WHEN I load the application  
+THEN I am presented with a list of recent rewards and Login/Signup section.  
+WHEN I enter my account’s email address and password and click on the login button  
+THEN I am logged in to the site.  
+WHEN I am logged in to the site  
+THEN I am presented with options to add student, delete student, update student and reward student.  
+WHEN I click on Signup  
+THEN I am presented with two inputs for an email address and password and Signup button.  
+WHEN I enter a valid email address and a new password and click on the signup button  
+THEN my user account is created and I am logged in to the site.  
+WHEN I click on the Add Student menu option  
+THEN I am presented with input fields for student code, student name, class, email and a submit button.  
+WHEN I click on the submit button  
+THEN the student details are added to the database.  
+WHEN I click on the Delete Student menu option  
+THEN I am presented with input field for student code and a submit button.  
+WHEN I click on the submit button  
+THEN the student with the student code is removed from the database.  
+WHEN I click on the Update Student menu option  
+THEN I am presented with input fields for student code, student class and a submit button.  
+WHEN I click on the submit button  
+THEN the student's new class is updated in the database.  
+WHEN I click on the Reward Student menu option  
+THEN I am presented with a list of students, reward category and a submit button.  
+WHEN I click on the submit button  
+THEN the student is rewarded points which is added to the database.  
+WHEN I click on the Logout button  
+THEN I am logged out of the site and returned to the main page.    
 
 
 # Steps to run the app
-Use the following command:
+Use the following command:  
 $ npm run develop
 
 # Mock-Up
