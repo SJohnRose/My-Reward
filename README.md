@@ -4,7 +4,7 @@ A Student Rewards System developed as an interactive MERN stack single-page appl
 # Features
 * teachers can create an account.
 * teachers can add, update and delete students.
-* teachers can reward students with points for good behaviour or academic exceelence.
+* teachers can reward students with points for good behaviour or academic excellence.
 
 # User Story
 AS A teacher wanting to reward students
